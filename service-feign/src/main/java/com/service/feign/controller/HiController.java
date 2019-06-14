@@ -8,11 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author domain
- * @date 2019-06-13
+ * @date 2019-06-14
  */
 @RestController
 public class HiController {
 
+    /**
+     * 编译器报错，无视。 因为这个Bean是在程序启动的时候注入的，编译器感知不到，所以报错。
+     */
     @Autowired
     ServiceHi serviceHi;
 
@@ -20,4 +23,5 @@ public class HiController {
     public String sayHi(@RequestParam String name) {
         return serviceHi.sayHiFromClientOne(name);
     }
+
 }
